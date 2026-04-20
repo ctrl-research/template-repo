@@ -10,7 +10,9 @@
   "prConcurrentLimit": 5,
   "prHourlyLimit": 2,
   "enabledManagers": [
-    "docker-compose"
+    "docker-compose",
+    "github-actions",
+    "gomod"
   ],
   "packageRules": [
     {
@@ -28,6 +30,38 @@
       "bumpVersion": "patch",
       "addLabels": [
         "docker"
+      ]
+    },
+    {
+      "matchDatasources": [
+        "github-actions"
+      ],
+      "commitMessageTopic": "github action {{depName}}",
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "ci",
+      "addLabels": [
+        "ci"
+      ]
+    },
+    {
+      "matchDatasources": [
+        "gomod"
+      ],
+      "commitMessageTopic": "go module {{depName}}",
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "deps",
+      "addLabels": [
+        "go"
       ]
     },
     {
