@@ -1,12 +1,12 @@
 # template
 
-Template repository for `gravityctl` projects.
+Template repository for `ctrl-research` projects.
 
 ## What's Included
 
 - **Renovate** — automated dependency updates for Docker, Go modules, and GitHub Actions
 - **Branch protection** — `main` requires PRs and review
-- **CODEOWNERS** — `@gravityctl/reviewers` auto-requested for review
+- **CODEOWNERS** — `@ctrl-research/reviewers` auto-requested for review
 - **MIT License**
 - **.gitignore** — common exclusions for OS, IDE, build outputs, and secrets
 
@@ -32,7 +32,7 @@ Add or remove managers as needed for your project.
 ```
 .
 ├── .github/
-│   ├── CODEOWNERS           # Auto-request review from @gravityctl/reviewers
+│   ├── CODEOWNERS           # Auto-request review from @ctrl-research/reviewers
 │   ├── renovate-config.js   # Renovate platform config
 │   └── workflows/
 │       └── renovate.yaml    # Renovate GitHub Action workflow
