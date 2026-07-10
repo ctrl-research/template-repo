@@ -20,6 +20,7 @@ GitHub template repository for bootstrapping `ctrl-research` projects. Provides 
 │   ├── renovate-config.js    # Renovate platform config
 │   └── workflows/
 │       └── renovate.yaml     # Renovate workflow
+├── .tool-versions            # Pinned language/tool versions (asdf/mise)
 ├── AGENTS.md                 # Operational expectations for humans and AI agents
 ├── CONTRIBUTING.md
 ├── LICENSE
@@ -30,6 +31,7 @@ GitHub template repository for bootstrapping `ctrl-research` projects. Provides 
 
 ## Conventions
 
+- `.tool-versions` is the single source of truth for language and tool versions. Before building, testing, or running any tooling, check it and use the pinned versions (install via `asdf install` or `mise install`). When adding a new language or tool to the project, pin its version there first — never assume a globally installed version.
 - See `AGENTS.md` for full agent workflow, code style, testing, and git/PR guidance.
 - Branch protection: never push directly to `main`; all changes via PR with review.
 - When adapting this template for a new project, update `renovate.json` managers/schedules and enable the repo in the Renovate GitHub App.

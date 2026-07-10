@@ -4,7 +4,8 @@
 
 1. Fork the repository
 2. Clone your fork
-3. Create a branch: `git checkout -b feat/your-feature-name`
+3. Install the pinned tool versions from `.tool-versions`: `asdf install` (or `mise install`)
+4. Create a branch: `git checkout -b feat/your-feature-name`
 4. Make your changes
 5. Commit using [conventional commits](#commit-style)
 6. Push and open a Pull Request

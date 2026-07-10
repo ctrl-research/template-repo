@@ -10,11 +10,28 @@
   "prConcurrentLimit": 5,
   "prHourlyLimit": 2,
   "enabledManagers": [
+    "asdf",
     "docker-compose",
     "github-actions",
     "gomod"
   ],
   "packageRules": [
+    {
+      "matchManagers": [
+        "asdf"
+      ],
+      "commitMessageTopic": "tool {{depName}}",
+      "matchUpdateTypes": [
+        "major",
+        "minor",
+        "patch"
+      ],
+      "semanticCommitType": "chore",
+      "semanticCommitScope": "tools",
+      "addLabels": [
+        "tools"
+      ]
+    },
     {
       "matchDatasources": [
         "docker"
