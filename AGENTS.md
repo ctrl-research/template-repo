@@ -32,6 +32,7 @@ GitHub template repository for bootstrapping `ctrl-research` projects. Provides 
 ## Conventions
 
 - `.tool-versions` is the single source of truth for language and tool versions. Before building, testing, or running any tooling, check it and use the pinned versions (install via `asdf install` or `mise install`). When adding a new language or tool to the project, pin its version there first — never assume a globally installed version.
+- Versioning: project artifacts (releases, tags, packages, images) follow [SemVer](https://semver.org/) as bare `X.Y.Z` — no `v` prefix (`1.4.2`, not `v1.4.2`). Bump MAJOR for breaking changes, MINOR for backwards-compatible features, PATCH for fixes.
 - See `AGENTS.md` for full agent workflow, code style, testing, and git/PR guidance.
 - Branch protection: never push directly to `main`; all changes via PR with review.
 - When adapting this template for a new project, update `renovate.json` managers/schedules and enable the repo in the Renovate GitHub App.

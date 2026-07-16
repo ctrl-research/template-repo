@@ -39,6 +39,15 @@ Examples:
 - `fix(api): correct response status code for 404`
 - `chore(deps): update go.mod dependencies`
 
+## Versioning
+
+Project artifacts (releases, tags, packages, container images) follow [Semantic Versioning](https://semver.org/):
+
+- Format is bare `X.Y.Z` — **no prefix** (`1.4.2`, not `v1.4.2`)
+- **MAJOR** — breaking changes
+- **MINOR** — backwards-compatible features
+- **PATCH** — backwards-compatible fixes
+
 ## Pull Requests
 
 - Fill out the PR template completely
