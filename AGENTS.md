@@ -19,6 +19,7 @@ GitHub template repository for bootstrapping `ctrl-research` projects. Provides 
 │   ├── CODEOWNERS            # @ctrl-research/reviewers
 │   ├── renovate-config.js    # Renovate platform config
 │   └── workflows/
+│       ├── release.yaml      # Label-driven SemVer release workflow
 │       └── renovate.yaml     # Renovate workflow
 ├── .tool-versions            # Pinned language/tool versions (asdf/mise)
 ├── AGENTS.md                 # Operational expectations for humans and AI agents
@@ -37,3 +38,14 @@ GitHub template repository for bootstrapping `ctrl-research` projects. Provides 
 - Branch protection: never push directly to `main`; all changes via PR with review.
 - When adapting this template for a new project, update `renovate.json` managers/schedules and enable the repo in the Renovate GitHub App.
 - Project-specific `CLAUDE.md` / `AGENTS.md` content should be filled in once the actual stack is added (`src/`, `tests/`, build commands, etc. are placeholders in `AGENTS.md`, not present here).
+
+## Releases
+
+- All released artifacts (images, binaries, packages) are versioned with [SemVer](https://semver.org/) as bare `X.Y.Z` tags — no `v` prefix.
+- **Automatic bumps**: when a PR merges to `main`, the next version is derived from the PR label:
+  - `major` — breaking changes
+  - `minor` — backwards-compatible features
+  - `patch` — fixes
+  - No label — defaults to a `patch` bump
+- **Manual releases**: a specific version may be cut manually by supplying an explicit `X.Y.Z` version tag when needed (e.g. via a manual workflow dispatch). This bypasses the label-based bump.
+- Release automation lives in `.github/workflows/release.yaml`: it computes the next version, tags, and creates the GitHub release. Building and publishing artifacts (images, binaries) is project-specific and left as a TODO stub in the workflow.

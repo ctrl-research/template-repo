@@ -48,6 +48,8 @@ Project artifacts (releases, tags, packages, container images) follow [Semantic 
 - **MINOR** — backwards-compatible features
 - **PATCH** — backwards-compatible fixes
 
+Releases are cut automatically when a PR merges to `main`, based on its `major`/`minor`/`patch` label (default: `patch`). To release a specific version, run the **Release** workflow (`.github/workflows/release.yaml`) with an explicit `X.Y.Z` version.
+
 ## Pull Requests
 
 - Fill out the PR template completely
